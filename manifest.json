@@ -1,0 +1,37 @@
+{
+    "manifest_version": 3,
+    "name": "Remix Detector",
+    "description": "Try to detect if Remix is being used on the site and show the Remix logo if it is",
+    "version": "1.0",
+    "icons": {
+        "16": "images/icon-16.png",
+        "32": "images/icon-32.png",
+        "48": "images/icon-48.png",
+        "128": "images/icon-128.png"
+    },
+    "content_scripts": [
+        {
+            "js": [
+                "content.js"
+            ],
+            "matches": [
+                "https://*/*"
+            ]
+        }
+    ],
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "detect_remix.js",
+                "images/remix-logo-60x60.jpg"
+            ],
+            "matches": [
+                "https://*/*"
+            ]
+        }
+    ],
+    "permissions": [
+        "scripting",
+        "activeTab"
+    ]
+}
